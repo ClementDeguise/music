@@ -13,7 +13,7 @@
 }
 
 /* The navigation menu links */
-.playlist-menu a {
+.playlist-menu a{
   padding: 8px 8px 8px 32px;
   text-decoration: none;
   font-size: 25px;
@@ -22,18 +22,45 @@
   transition: 0.3s;
 }
 
+
+.playlist-menu span{
+  padding: 12px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #818181;
+  display: block;
+  transition: 0.3s;
+}
+
+
+.playlist-menu .menutitle{
+  padding: 8px 8px 20px 32px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #818181;
+  display: block;
+  transition: 0.3s;
+  margin-top: 10px; 
+  right: 0;
+  border-bottom: 1px solid #e0e0eb;
+}
+
+
+
 /* When you mouse over the navigation links, change their color */
-.playlist-menu a:hover {
+.playlist-menu a:hover,span:hover {
   color: #f1f1f1;
 }
 
 /* Position and style the close button (top right corner) */
 .playlist-menu .closebtn {
   position: absolute;
-  top: 0;
-  right: 25px;
+  margin-top: 4px;
+  right: 0;
   font-size: 36px;
   margin-left: 50px;
+  margin-right: 8px;
+
 }
 
  /*Style page content - use this if you want to push the page content to the right when you open the side navigation 

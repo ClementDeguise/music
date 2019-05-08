@@ -22,7 +22,7 @@ function Header({ callback }) {
     return (
 		<header className="top-header" style={HeaderStyle}>
 			<div className="menu-button">
-                <button onClick={callback}>&#9776;Menu</button>
+                <button className="menu-button" onClick={callback}>&#9776;Menu</button>
             </div>
 	    </header>
 	);
