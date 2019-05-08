@@ -1,0 +1,11 @@
+
+.top-header {
+
+  border: 2px solid black;
+  padding: 75px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  text-align: center;
+  position: relative;
+
+}

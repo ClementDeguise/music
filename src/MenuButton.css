@@ -1,0 +1,8 @@
+.menu-button {
+  font-size: 30px;
+  /*cursor: pointer;*/
+  position: absolute;
+  top: 8px;
+  left: 16px;
+  color: white;
+}
