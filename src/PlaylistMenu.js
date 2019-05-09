@@ -1,4 +1,4 @@
-import React, {useState} from 'react'
+import React, {useState, useEffect} from 'react'
 import './PlaylistMenu.css'
 
 /* receives Open from APP that recieved from header  */
@@ -7,17 +7,22 @@ import './PlaylistMenu.css'
 function PlaylistMenu(props) {
     
 
-    //const Playlists = props.playlists;
-    //console.log(Playlists);
 
+    const [Playlists, setPlaylists] = useState([])
 
     // gotta iterate over the array, and explore the object
     // for mapping:  https://coursework.vschool.io/mapping-components-in-react/
 
     //an array of json objects (between {}) will still iterate and allow access to objects properties
-     const Playlists = props.playlists.map((playlist, index) => 
-        <span key={playlist.title + index}>{playlist.title}</span>
-        )
+    // re render on props changes, dont forget to initialize the const first
+
+    // here for the parent to know which button has been pressed, the parent callback must accept the id as parameter,
+    // then return a run of the parent function with the index through the props
+    useEffect(() => {
+        setPlaylists(props.playlists.map((playlist, index) => 
+            <span id={index} key={playlist.title + index} onClick={() => props.playlistdisplay(index)}>{playlist.title}</span>
+        ))
+        },[props.playlists, props.playlistdisplay]);
 
 
 

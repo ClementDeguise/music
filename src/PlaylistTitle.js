@@ -1,11 +1,11 @@
 import React from 'react'
 
-function PlaylistTitle() {
+function PlaylistTitle({content}) {
 
 
 	return (
 		<div className="playlist-title">
-		<span>Playlist title</span>
+		<span>{content}</span>
 		</div> 
 		)
 }

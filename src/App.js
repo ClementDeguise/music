@@ -1,4 +1,4 @@
-import React, {useState, useCallback, useEffect} from 'react'
+import React, {useState, useCallback, useEffect, useLayoutEffect} from 'react'
 import Header from './Header'
 import PlaylistMenu from './PlaylistMenu'
 import ContentWrapper from './ContentWrapper'
@@ -11,13 +11,15 @@ function App() {
 
   const [menuOpened, setMenuOpened] = useState(false);
 
-  const menuCallback = useCallback(e => {setMenuOpened(true)},[menuOpened]);
+  const menuCallback = useCallback(e => {setMenuOpened(true)},[]);
   const PlaylistMenuCallback = useCallback(e => {setMenuOpened(false)},[]);
 
   //select playlists first
 
   const [data, setData] = useState({ playlists: [] });
+  const [playlistDisplayData, setPlaylistDisplayData] = useState([]);
 
+  const [trigger, setTrigger] = useState(false);
 
   // hook used to fetch data, regular fetch used
   // also its possible to use async/await
@@ -54,22 +56,45 @@ function App() {
 
   //console.log(data.playlists);
 
+  // NOTE
+  //  Object.keys(MyObject).map((key) => MyObject[key]));
+  // will create an array containing all values of the keys of the Object
+
+  const [allowedState,setAllowedState] = useState([
+    { id: 1, value: "Alabama" },
+    { id: 2, value: "Georgia" },
+    { id: 3, value: "Tennessee" }
+  ]);
 
   // mapping is for rendering the table rows components
   
+  // hardcoded like a motherfucker
+  // use no second argument
+  const DisplayCallback = useCallback((id) => {   
+    console.log(id);
+    
+    //array
+    //setPlaylistDisplayData(allowedState);
+    setPlaylistDisplayData(data.playlists[id]);
+    setTrigger(true);
+    /*console.log(Object.keys(data.playlists[id]));
+    console.log(data.playlists[id]);*/
+    console.log(playlistDisplayData);
+  });
 
-
+  //console.log(playlistDisplayData);
+  //const DisplayCallback = ((id) => {console.log(id)});
 
 
   return (
 
     <div>
-      <PlaylistMenu pmcallback={PlaylistMenuCallback} open={menuOpened} playlists={data.playlists}/>
+      <PlaylistMenu pmcallback={PlaylistMenuCallback} open={menuOpened} playlists={data.playlists} playlistdisplay={DisplayCallback}/>
 
       <div className="App" style={{backgroundColor: menuOpened ? "rgba(0,0,0,0.4)" : "white"}}>
 
         <Header callback={menuCallback}/>
-        <ContentWrapper />
+        <ContentWrapper playlistdata={playlistDisplayData} trig={trigger} />
       </div>
     </div>
   )
