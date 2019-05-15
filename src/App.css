@@ -1,6 +1,11 @@
 .App {
-  height: 100vh;
+  height: 100%;
+  width: 70%;
+  margin: 0 auto;
+ /* padding: 0 30px;*/
   transition: background-color .5s;
+  background-color: white;
+
 
 }
 

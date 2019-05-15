@@ -2,7 +2,7 @@ import React, {useState, useEffect, useCallback} from 'react'
 import PlaylistTumbnail from './Playlist-tumbnail'
 import PlaylistTitle from './PlaylistTitle'
 import './ContentWrapper.css'
-import logo from './Images/logo.jpg'
+import logo from './images/logo.jpg'
 
 function ContentWrapper({ playlistdata, trig }) {
 
@@ -54,21 +54,23 @@ function ContentWrapper({ playlistdata, trig }) {
 
 	return (
 		<div className="content-wrapper">
+
 			<PlaylistTumbnail source={logo}/>
 			<PlaylistTitle content={trig && playlistdata.title}/>
 
-			<table className="playlist-table">
-				<thead>
-					<tr>
-		              <th>Track</th>
-		              <th>Artist</th>
-					</tr>
-				</thead>	
-				<tbody>
-					{trackrow()}
-				</tbody>
-			</table>
-
+			<div className="table-container">
+				<table className="playlist-table">
+					<thead>
+						<tr>
+			              <th>Track</th>
+			              <th>Artist</th>
+						</tr>
+					</thead>	
+					<tbody>
+						{trackrow()}
+					</tbody>
+				</table>
+			</div>
 		</div> 
 		)
 }
