@@ -1,0 +1,218 @@
+
+
+
+.top-header {     
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  /*background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;*/
+  /*border: 1px solid black;*/
+  background-image: linear-gradient(to right,  #7d0a8c,  #eca9d4);
+
+  display: flex;
+  flex-direction: row;
+  align-content: center;
+  justify-content: flex-start;
+  color: white;
+
+
+
+}
+
+/* canvas width : 300px; */
+
+:root {
+	--image-spacing: 240px;
+	--canvas-spacing: 320px;
+	--track-info-spacing: 80px;
+}
+
+.track-info{
+
+	flex-basis: var(--image-spacing);
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+
+}
+
+.track-img-container {
+	padding: 10px;
+	width: 80px;
+	height: 80px;
+}
+
+.track-text {
+	font-size: 13px;
+	flex-basis: calc(100% - 100px);
+}
+
+#track-img {
+	width: 80px;
+	height: 80px;
+	object-fit: cover;
+
+}
+
+
+
+.play-options-container {
+
+	/*margin-left: 150px;*/
+
+	padding: 5px;
+	display: flex;
+	flex-direction: row;
+	/*border: 1px solid black;*/
+
+	flex-basis: calc(100% - var(--image-spacing) - var(--canvas-spacing));
+	align-items: center;
+
+}
+
+
+.canvas-container {
+	/*border: 1px solid black;*/
+
+	flex-basis: var(--canvas-spacing);
+
+}
+
+
+
+@media screen and (max-width: 1080px) {
+	.canvas-container {
+		display: none;
+	}
+	.play-options-container {
+		flex-basis: calc(100% - 100px);
+	}
+}
+
+
+
+.play-container {
+
+	flex-direction: row;
+	flex-basis: 50px;
+	color: black;
+	font-size: 1.22rem;
+	padding-top: 4px;
+}
+
+
+.progress-container {
+	height: 15px;
+	flex-basis: calc(75% - 150px);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+
+.progress-bar {
+	height: 2px;
+	background:  #a7a7a5 ;
+	outline: none;
+	border-radius: 2px;
+	-webkit-appearance: none;
+
+	
+	width: 100%;
+}
+
+.progress-container:hover .progress-bar::-moz-range-thumb {
+	visibility: visible;
+}
+
+.currentTime-span, .duration-span {
+	font-family: 'Poppins', sans-serif;
+	font-size: 16px;
+	padding: 0 5px;
+	/*color: #686767;*/
+}
+.currentTime-span {
+	padding-left: 20px;
+}
+
+
+
+/* https://developer.mozilla.org/en-US/docs/Web/CSS/::-webkit-slider-thumb
+Not supported by every browser, 2 versions below, for Chrome and Mozilla
+
+*/
+/*
+.progress-bar::-webkit-slider-thumb {
+	-webkit-appearance: none;
+	width: 10px;
+	height: 10px;
+	border-radius: 50%;
+	background: #f18722;
+	/* specify a margin for chrome 
+	margin-top: -14px;
+	cursor: pointer;
+}*/
+.progress-bar::-moz-range-thumb {
+	-webkit-appearance: none;
+	width: 12px;
+	height: 12px;
+	border-radius: 50%;
+	background: #f18722;
+	border: none;
+	/* specify a margin for chrome */
+	cursor: pointer;
+	visibility: hidden;
+}
+.progress-bar::-moz-range-progress {
+	background-color: #f18722;
+	height: 2px;
+}
+
+
+
+.player-button {
+	/*color: #2b2a2b;*/
+}
+	/*margin-left: 7px;
+	margin-top: 9px;
+	color: white;
+	/*filter: drop-shadow(0px 0px 10px rgba(244, 127, 84, 0.8));
+}*/
+.player-button:hover {
+	filter: drop-shadow(1px 1px 3px rgba(0, 0, 0, 0.5));
+}
+
+/*
+/*
+canvas {
+  position: absolute;
+  right: 0;
+  margin: 10px;
+  /*top: 50%;
+  transform: translateX(-50%);
+  /*margin: 0 auto;
+  display: block;
+  text-align: center;
+ /* overflow-y: visible;
+  /*border: 1px solid black;
+  
+}
+*/
+
+.volume-buttons {
+	flex-basis: 10%;
+	padding-top: 8px;
+}
+
+
+.vol-btn-high {
+	/*color: #eb892d;*/
+	font-size: 1.22rem;
+}
+
+
+
+
+

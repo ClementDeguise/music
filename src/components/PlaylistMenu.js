@@ -1,5 +1,4 @@
 import React, {useState, useEffect} from 'react'
-import './PlaylistMenu.css'
 
 /* receives Open from APP that recieved from header  */
 
@@ -26,14 +25,13 @@ function PlaylistMenu(props) {
         ))
         },[props.playlists, props.playlistdisplay]);
 
-
+    // backgroundImage: `url(${require('./images/sidebar.jpg')})`}
 
 	return (
         <div className="playlist-menu" 
         	 id="playlist-menu"
-        	 style={{width: props.open ? 250 : 0, backgroundImage: `url(${require('./images/sidebar.jpg')})`}}>
+        	 style={{width: props.open ? 250 : 0}}>
 
-	      <a href="javascript:void(0)" className="closebtn" onClick={props.pmcallback}>&times;</a>
           <span className="menutitle">My Playlists</span>
           <hr className="light"/>
           <div className="playlist-spans">{Playlists}</div>
