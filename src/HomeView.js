@@ -2,12 +2,15 @@ import React, {useState, useCallback, useEffect, useLayoutEffect} from 'react'
 import Header from './components/Header'
 import PlaylistMenu from './components/PlaylistMenu'
 import ContentWrapper from './components/ContentWrapper'
+import Fab from '@material-ui/core/Fab'
+import AddIcon from '@material-ui/icons/Add'
+import { makeStyles } from '@material-ui/core/styles';
 //import './App.css'
 //import jsonData from './fakeData'
 
 
 
-function App({menuOpened, playlistCallback, turnoff}) {
+function HomeView({menuOpened, playlistCallback, turnoff, formCb}) {
 
   /*const [menuOpened, setMenuOpened] = useState(false);
 
@@ -88,6 +91,8 @@ function App({menuOpened, playlistCallback, turnoff}) {
   // for opacity but just on the app div
   // style={{backgroundColor: menuOpened ? "rgba(0,0,0,0.4)" : "white"}}
 
+
+
   return (
 
     <div>
@@ -98,13 +103,22 @@ function App({menuOpened, playlistCallback, turnoff}) {
         style={{
           visibility: menuOpened ? "visible" : "hidden",
           opacity: menuOpened ? "0.5" : "0"
-    }}></div>
+          }}>
+      </div>
 
 
-      <div className="App">
+      <div className="HomeView">
 
         <Header className="music-player"/>
         <hr className="player-hr" />
+
+        <div className="upload-row-container">
+          <div className="upload-button-container">
+            <Fab color="secondary" size="small" onClick={formCb}><AddIcon /></Fab>
+          </div>
+        </div>
+
+
         <ContentWrapper playlistdata={playlistDisplayData} trig={trigger} />
       </div>
     </div>
@@ -114,4 +128,4 @@ function App({menuOpened, playlistCallback, turnoff}) {
   
 }
 
-export default App;
+export default HomeView;

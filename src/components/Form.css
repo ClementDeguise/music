@@ -1,0 +1,91 @@
+/* Modal Content/Box */
+.upload-form {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  line-height: 1.58;
+  background-color: #fefefe;
+  position: relative;
+  /*top: -300px;*/
+  margin: auto; 
+  /*padding: 20px;*/
+  border: 1px solid #888;
+  width: 40%;
+
+
+
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+  /*animation: animatetop;
+  animation-duration: 0.4s*/
+
+}
+
+/*@keyframes animatetop {
+  from {
+    top: -300px;
+  }
+  to {  
+    top: 0;
+  }
+}*/
+
+.upload-container {
+    padding: 1rem;  
+    padding-bottom: 2rem;
+
+}
+
+
+.upload-header h2 {
+    margin: 1rem 0;
+    padding-left: 1.3rem;
+}
+.multiple-upload h3 {
+    margin: 1rem 0;
+    padding-left: 1.3rem;
+}
+
+
+.singleUploadForm, .multipleUploadForm {
+    display: flex;
+    justify-content: space-around;
+
+
+}
+
+
+
+button.primary {
+    border: 1px solid transparent;
+    font-size: 14px;
+    outline: none;
+    text-align: center;
+    padding: 0.6rem 1rem;
+    border-radius: 2px;
+    transition: all 0.2s ease-in-out;
+    cursor: pointer;
+    background-color: #128ff2;
+    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.12);
+    color: #fff;
+    width: 10%;
+}
+
+
+input[type="file"] {
+    border: 1px solid #128ff2; 
+    padding: 5px;
+}
+
+
+.file-input {
+    width: 70%;
+    flex-basis: 70%;
+}
+
+.submit-btn {
+    min-width: 100px;
+    flex-basis: 10%
+}
+
+.upload-response {
+    overflow-x: hidden;
+    word-break: break-all;
+}
